@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - Planner Admin</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/Admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="~/asset/favicon.ico" rel="icon" type="image/x-icon" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-danger border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Admin" asp-action="BookingRecords">
+                    <img src="~/asset/plannerlogo.png" height="70" width="80" />
+                </a>
+                <a class="navbar-brand font-weight-bolder " asp-area="" asp-controller="Admin" asp-action="BookingRecords"><h3>Planner</h3></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarsupportedcontent"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
+
+                        <li class="nav-item">
+                            @*<button type="button" class="m-2 "><a class="nav-link text-dark" asp-area="" asp-controller="home" asp-action="index">Home</a></button>*@
+                            <a class="nav-link text-white font-weight-bolder" asp-area="" asp-controller="Admin" asp-action="BookingRecords"><h6>Booking Records</h6></a>
+                        </li>
+
+                        <li class="nav-item">
+                            @*<button type="button" class="m-2"> <a class="nav-link text-dark" asp-area="" asp-controller="home" asp-action="login">  Login</a></button>*@
+                            <a class="nav-link text-white font-weight-bolder" asp-area="" asp-controller="Admin" asp-action="UserRecords"><h6>User Records</h6></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bolder" asp-area="" asp-controller="Admin" asp-action="ManageVenue"><h6>Manage Venues</h6></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bolder" asp-area="" asp-controller="Admin" asp-action="ManageMenu"><h6>Manage Menu</h6></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bolder" asp-area="" asp-controller="Admin" asp-action="ManageDesign"><h6>Manage Designs</h6></a>
+                        </li>
+                        
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+        <div>
+            @RenderBody()
+        </div>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+</body>
+</html>

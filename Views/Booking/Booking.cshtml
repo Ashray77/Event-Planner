@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "Booking Page";
+    Layout = "~/Views/Shared/BookingLayout.cshtml";
+}
+
+<div class="container bg-light font-weight-bolder">
+
+    <h3 class="text-center mb-5 text-dark">Book Your Event</h3>
+    <form action="/" method="post">
+        <div class="row mb-3">
+            <label for="inputGuestNumber" class="col-sm-2 col-form-label">Number of Guest</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputGuestNumber" placeholder="Number of Guest">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputEventType" class="col-sm-2 col-form-label">Type of Event</label>
+            <div class="col-sm-8">
+                <select id="EventType" name="eventtype" class="form-control custom-select bg-white border-left-0 border-md">
+                    <option value="">Type of eventb</option>
+                    <option value="">Wedding</option>
+                    <option value="">Birthday</option>
+                    <option value="">Party</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputEventShift" class="col-sm-2 col-form-label">Event Shift</label>
+            <div class="col-sm-8">
+                <select id="EventType" name="eventtype" class="form-control custom-select bg-white border-left-0 border-md">
+                    <option value="">Event Shift</option>
+                    <option value="">Morning</option>
+                    <option value="">Evening</option>
+                    <option value="">Night</option>
+                    <option value="">Whole Day</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputPhotogragher" class="col-sm-2 col-form-label">Photographer</label>
+            <div class="col-sm-8">
+                <select id="EventType" name="eventtype" class="form-control custom-select bg-white border-left-0 border-md">
+                    <option value="">Need Photographer</option>
+                    <option value="">Yes</option>
+                    <option value="">No</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block text-uppercase col-sm-5 mb-2 rounded-pill shadow-sm">Book My Event</button>
+    </form>
+</div>

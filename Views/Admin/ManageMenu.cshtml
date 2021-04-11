@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Manage Menu Page";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container bg-light font-weight-bolder">
+
+    <h3 class="text-center mb-5 text-dark">Add Menu</h3>
+    <form action="/" method="post">
+        <div class="row mb-3">
+            <label for="inputMenuName" class="col-sm-2 col-form-label">Menu Name</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputMenuName" placeholder="Menu Name">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputItems" class="col-sm-2 col-form-label">Items</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputItems" placeholder="Items">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputPrice" class="col-sm-2 col-form-label">Price</label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" id="inputPrice" placeholder="Menu Price">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block text-uppercase col-sm-5 mb-2 rounded-pill shadow-sm">Add</button>
+    </form>
+    <hr />
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Menu ID</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
