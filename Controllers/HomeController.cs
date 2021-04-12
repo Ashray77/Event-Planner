@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using EventPlanner.Models;
 
 namespace EventPlanner.Controllers
 {
@@ -28,10 +29,15 @@ namespace EventPlanner.Controllers
             return View();
         }
 
+        
+
         public IActionResult Register()
         {
             return View();
         }
+        
+        
+       
 
         public IActionResult Design()
         {

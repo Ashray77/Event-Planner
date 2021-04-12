@@ -1,0 +1,59 @@
+﻿@model EventPlanner.Models.Menu
+
+@{
+    ViewData["Title"] = "AddMenu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AddMenu</h1>
+
+<h4>Menu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddMenu">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="Menu_id" class="control-label"></label>
+                <input asp-for="Menu_id" class="form-control" />
+                <span asp-validation-for="Menu_id" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Menu_name" class="control-label"></label>
+                <input asp-for="Menu_name" class="form-control" />
+                <span asp-validation-for="Menu_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item_starter" class="control-label"></label>
+                <input asp-for="Item_starter" class="form-control" />
+                <span asp-validation-for="Item_starter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item_maincourse" class="control-label"></label>
+                <input asp-for="Item_maincourse" class="form-control" />
+                <span asp-validation-for="Item_maincourse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item_dessert" class="control-label"></label>
+                <input asp-for="Item_dessert" class="form-control" />
+                <span asp-validation-for="Item_dessert" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Menu_price" class="control-label"></label>
+                <input asp-for="Menu_price" class="form-control" />
+                <span asp-validation-for="Menu_price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ManageMenu">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
