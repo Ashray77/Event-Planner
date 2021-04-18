@@ -2,15 +2,12 @@
 
 @{
     ViewData["Title"] = "Register";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>Register</h1>
-
-<h4>UserAccount</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<h3 class="text-center m-3 font-weight-bolder" style="font-family:serif; font-style:italic">Create your Account</h3>
+<div class="row container-fluid bg-light align-items-center" style="font-family:serif; font-style:italic">
+    <div class="col-md-6">
         <form asp-action="Register">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @*<div class="form-group">
@@ -18,56 +15,61 @@
                 <input asp-for="User_id" class="form-control" />
                 <span asp-validation-for="User_id" class="text-danger"></span>
             </div>*@
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label asp-for="First_name" class="control-label"></label>
-                <input asp-for="First_name" class="form-control" />
+                <input asp-for="First_name" class="form-control" placeholder="Your First Name"/>
                 <span asp-validation-for="First_name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label asp-for="Last_name" class="control-label"></label>
-                <input asp-for="Last_name" class="form-control" />
+                <input asp-for="Last_name" class="form-control" placeholder="Your Last Name"/>
                 <span asp-validation-for="Last_name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" class="form-control" placeholder="Your Email Address"/>
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label asp-for="phone" class="control-label"></label>
-                <input asp-for="phone" class="form-control" />
+                <input asp-for="phone" class="form-control" placeholder="Your Phone Number"/>
                 <span asp-validation-for="phone" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
+                <input asp-for="Address" class="form-control" placeholder="Your Address"/>
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Role" class="control-label"></label>
-                <input asp-for="Role" class="form-control" />
+            <div class="form-group col-md-6">
+                <label asp-for="Role" class="control-label">Role</label>
+                <input asp-for="Role" class="form-control" placeholder="Your Role" />
+                @*<select class="form-control" id="role_id" name="role_id" asp-for="Role"
+        asp-items="@(new SelectList(ViewBag.listofrole,"role_id","role"))"></select>*@
                 <span asp-validation-for="Role" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+                <input asp-for="Password" class="form-control" placeholder="New Password"/>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
+                <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password"/>
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create Account" class="btn btn-primary" />
             </div>
+            <p>Already Have Account?<a asp-controller="Home" asp-action="Login">Sign Up</a></p>
         </form>
+    </div>
+    <div class="col-md-6">
+        <img class="img-fluid" src="https://images.unsplash.com/photo-1526894198609-10b3cdf45c52?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Y2hhbXBhZ25lfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Alternate Text" />
+        <h5 class="text-uppercase">Create an Account to Book an Event to Experience Exclusive Event Organized by us.</h5>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

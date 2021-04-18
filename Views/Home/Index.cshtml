@@ -19,12 +19,12 @@
     </div>
 </div>*@
 
-<div class="container ">
-    <div class="events">
-
+<div class="container " style="font-family:serif; font-style:italic">
+    <div class="events" style="font-family:serif; font-style:italic">
+        <p>“What you need, is an Event, to remember for a lifetime.”</p>
 
         <!--About us-->
-        <h2 style="text-align:center"><hr />  About Us<hr /></h2>
+        <h2 style="text-align:center"><hr /> About Us<hr /></h2>
         <div class="bg-light">
             <div class="container py-5">
                 <div class="row h-100 align-items-center py-5">
@@ -52,7 +52,9 @@
                         <i class="fab fa-fort-awesome fa-2x"></i>
                         <h2 class="font-weight-light">Venues</h2>
                         <p class="font-italic text-muted mb-4">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Buget and luxury venues are accociated with us.
+                            All the necsesary information regarding venues are also mentioned. 
+                            Customer can Choose the venue according to them.
                         </p>
                         <a class="btn btn-info px-5 rounded-pill shadow-sm" asp-area="" asp-controller="home" asp-action="Venue">Learn More</a>
                     </div>
@@ -77,7 +79,9 @@
                         <i class="fas fa-utensils fa-2x"></i>
                         <h2 class="font-weight-light">Catering Services</h2>
                         <p class="font-italic text-muted mb-4">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            We have created the Menus according to event format. 
+                            Vegetarian and non veg menu are also available. 
+                            Breakfast and lunch menu are also available with us.
                         </p>
                         <a class="btn btn-info px-5 rounded-pill shadow-sm" asp-area="" asp-controller="home" asp-action="CateringServices">Learn More</a>
                     </div>
@@ -88,50 +92,29 @@
 
         <!--upcoming events-->
         <h2 style="text-align:center"><hr />  Upcoming Events<hr /></h2>
-        @*<div class="row col-12">
-            <div class="card m-2" style="width: 16rem;">
-                <img src="~/asset/holievent.jpg" class="card-img-top rounded float-none h-50" alt="holi">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card m-2" style="width: 16rem;">
-                <img src="~/asset/holievent.jpg" class="card-img-top rounded float-none h-50" alt="holi">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card m-2" style="width: 16rem;">
-                <img src="~/asset/holievent.jpg" class="card-img-top rounded float-none h-50" alt="holi">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-
-        </div>*@
+        
         <div id="card-multi" class="card" data-ride="card">
             <div class="carousel-inner" role="listbox">
 
-                <!--First slide-->
+                <!--cards-->
                 <div class="carousel-item active">
 
                     <div class="col-md-3" style="float:left">
                         <div class="card mb-2">
                             <img class="card-img-top"
-                                 src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+                                 src="~/asset/upcomingeventmusicfestival.png" alt="Card image cap">
                             <div class="card-body">
-                                <h4 class="card-title">Card title</h4>
+                                <h4 class="card-title">Music Festival by Spark</h4>
                                 <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the
-                                    card's content.
+                                    First electronin Dance Music Festival in Nepal.
+                                    Tents, Food Stall, Drinks, Game, Wifi, Artificial Pool, 
+                                    Light Show, Fireworks Show.
                                 </p>
-                                <a class="btn btn-primary">Button</a>
+                                <p>
+                                    Ticket Price : Rs 1800 for 3 days entry.
+                                    Sleeping Tents are availabel at Rs 1000 per night.
+                                </p>
+                                
                             </div>
                         </div>
                     </div>
@@ -139,14 +122,22 @@
                     <div class="col-md-3" style="float:left">
                         <div class="card mb-2">
                             <img class="card-img-top"
-                                 src="~/asset/designs/design1.jpg" alt="Card image cap">
+                                 src="~/asset/khukurimusifest.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <h4 class="card-title">Card title</h4>
+                                <h4 class="card-title">Khukuri Music Festival</h4>
                                 <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the
-                                    card's content.
+                                    KHUKURI MUSIC FESTIVAL
+                                    Nepal's Happiest festival
+                                    28th August 2021
+                                    2pm to 10pm
+                                    At MAlla Hotel
+                                    performing artist;
+                                    Bartika eam rai | Bikki gurung | Bipul chettri | 5:55 | The elements | Blues and spark | Vek | Pahelo batti muni
+                                    DJ line up
+                                    FInzok | Bidhan lama | bikki cool | BPM |Neil | Ma33sh | Pal10
+                                    Ticket price : 1500
                                 </p>
-                                <a class="btn btn-primary">Button</a>
+                                
                             </div>
                         </div>
                     </div>
@@ -201,55 +192,48 @@
         <div class="row">
             <!--Grid column-->
             <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                <h5 class="text-uppercase text-white">Footer Content</h5>
-
-                <p class="text-white">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                    molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                    voluptatem veniam, est atque cumque eum delectus sint!
+                <h5 class="text-uppercase text-white">The Planner</h5>
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <p class="text-white">
+                            “Perfection is not attainable, but if we chase perfection we can catch excellence.”
+                        </p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer text-white">
+                        <cite title="Source Title">Vince Lombardi</cite>
+                    </figcaption>
+                </figure>
+                <p class="text-white">We Make Your Event Memorable and Successfull.
+                The most Succesfull event is the one that achives your goals and exceeds your expectation.
                 </p>
+                
+                
             </div>
             <!--Grid column-->
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-white">
-                <h5 class="text-uppercase">Links</h5>
+                <h5 class="text-uppercase">Go to</h5>
 
                 <ul class="list-unstyled mb-0 text-white">
                     <li>
-                        <a href="#!" class="text-white">Link 1</a>
+                        <a asp-controller="home" asp-action="login" class="text-white">Login</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-white">Link 2</a>
+                        <a asp-controller="user" asp-action="register" class="text-white">Register</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-white">Link 3</a>
+                        <a asp-controller="home" asp-action="venue" class="text-white">Associated Venue</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-white">Link 4</a>
+                        <a asp-controller="home" asp-action="cateringservices" class="text-white">Our Menus</a>
+                    </li>
+                    <li>
+                        <a asp-controller="home" asp-action="design" class="text-white">Our Designs</a>
                     </li>
                 </ul>
             </div>
             <!--Grid column-->
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase mb-0 text-white">Links</h5>
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#!" class="text-white">Link 1</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-white">Link 2</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-white">Link 3</a>
-                    </li>
-                    <li>
-                        <a href="#!" class="text-white">Link 4</a>
-                    </li>
-                </ul>
-            </div>
-            <!--Grid column-->
+            
         </div>
         <!--Grid row-->
     </div>

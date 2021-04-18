@@ -5,12 +5,12 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>ManageVenue</h1>
+<h1 style="font-family:serif; font-style:italic">ManageVenue</h1>
 
 <p>
-    <a asp-action="AddVenue">Add New Venue</a>
+    <a asp-controller="Venue" asp-action="AddVenue">Add New Venue</a>
 </p>
-<table class="table">
+<table class="table table-hover table-light table-responsive-md" style="font-family:serif; font-style:italic">
     <thead>
         <tr>
             <th>
@@ -56,9 +56,9 @@
                 @Html.DisplayFor(modelItem => item.venue_description)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id = item.Venue_id }, new { @Class = "btn btn-primary" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Venue_id }, new { @Class = "btn btn-success" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Venue_id }, new { @Class = "btn btn-danger" })
             </td>
         </tr>
 }

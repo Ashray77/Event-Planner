@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using EventPlanner.Models;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace EventPlanner.Controllers
 {
     public class VenueController : Controller
@@ -15,7 +14,7 @@ namespace EventPlanner.Controllers
 
         public VenueController(ApplicationDbContext db)
         {
-            _db = db; 
+            _db = db;
         }
         public IActionResult ManageVenue()
         {
@@ -29,16 +28,72 @@ namespace EventPlanner.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddVenue(Venue ven)
+        public async Task<IActionResult> AddVenue(Venue venue)
         {
             if (ModelState.IsValid)
             {
-                _db.Add(ven);
+                _db.Add(venue);
                 await _db.SaveChangesAsync();
                 return RedirectToAction("ManageVenue");
 
             }
+            return View(venue);
+        }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("ManageVenue");
+            }
+            var getuserdetails = await _db.VenueTable.FindAsync(id);
+            return View(getuserdetails);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Venue ven)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Update(ven);
+                await _db.SaveChangesAsync();
+                return RedirectToAction("ManageVenue");
+            }
             return View(ven);
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("ManageVenue");
+            }
+            var getuserdetails = await _db.VenueTable.FindAsync(id);
+            return View(getuserdetails);
+
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("ManageVenue");
+            }
+            var getuserdetails = await _db.VenueTable.FindAsync(id);
+            return View(getuserdetails);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var getuserdetails = await _db.VenueTable.FindAsync(id);
+            _db.VenueTable.Remove(getuserdetails);
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction("ManageVenue");
+
         }
     }
 }

@@ -1,0 +1,86 @@
+﻿@model IEnumerable<EventPlanner.Models.Booking>
+
+@{
+    ViewData["Title"] = "BookingRecord";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>BookingRecord</h1>
+
+
+<table class="table table-hover table-light">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventShift)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberofGuest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ven)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Men)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Des)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtraDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Booking_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eventType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventShift)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberofGuest)
+            </td>
+            <th>
+                @Html.DisplayNameFor(modelItem => item.Ven)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelItem => item.Men)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelItem => item.Des)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExtraDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Booking_id }, new { @Class = "btn btn-primary" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Booking_id }, new { @Class = "btn btn-primary" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Booking_id }, new { @Class = "btn btn-primary" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div class="btn-group">
+    <a class="btn btn-primary" asp-action="Booking">Book an Event</a>
+</div>

@@ -1,0 +1,73 @@
+﻿@model EventPlanner.Models.Booking
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Booking_id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Booking_id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.eventType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.eventType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EventShift)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EventShift)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EventDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EventDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumberofGuest)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumberofGuest)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ven)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ven)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Men)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Men)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Des)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Des)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ExtraDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ExtraDescription)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="BookingRecord">Back to Booking Records</a>
+</div>

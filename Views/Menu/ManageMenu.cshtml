@@ -2,65 +2,71 @@
 
 @{
     ViewData["Title"] = "ManageMenu";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>ManageMenu</h1>
+<h1 class="text-center text-uppercase" style="font-family:serif; font-style:italic">Menu Records</h1>
+<div class="row container-fluid bg-light align-items-center" style="font-family:serif; font-style:italic">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Menu_id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Menu_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Item_starter)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Item_maincourse)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Item_dessert)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Menu_price)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Menu_id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Menu_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Item_starter)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Item_maincourse)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Item_dessert)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Menu_price)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Menu_id }, new { @Class = "btn btn-primary" })|
+                        @Html.ActionLink("Details", "Details", new { id = item.Menu_id }, new { @Class = "btn btn-success" }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Menu_id }, new { @Class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>   
+</div>
+<div class="btn-group">
+    <a class="btn btn-info" asp-action="AddMenu">Create New Menu</a>
+</div>
 
-<p>
-    <a asp-action="AddMenu">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Menu_id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Menu_name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Item_starter)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Item_maincourse)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Item_dessert)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Menu_price)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Menu_id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Menu_name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Item_starter)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Item_maincourse)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Item_dessert)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Menu_price)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Menu_id}, new {@Class = "btn btn-primary" })|
-                @Html.ActionLink("Details", "Details", new { id = item.Menu_id}, new {@Class = "btn btn-success" }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Menu_id}, new {@Class = "btn btn-danger" })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+

@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 using EventPlanner.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.AspNetCore.Identity;
+
+
 
 namespace EventPlanner
 {
@@ -26,7 +29,11 @@ namespace EventPlanner
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddControllersWithViews();
+
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Myconnection")));
         }
 
@@ -45,16 +52,17 @@ namespace EventPlanner
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
-
             app.UseAuthorization();
+
+
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=menu}/{action=managemenu}/{id?}");
+                    pattern: "{controller=booking}/{action=booking}/{id?}");
             });
         }
     }

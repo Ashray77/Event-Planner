@@ -1,0 +1,55 @@
+﻿@model EventPlanner.Models.Login
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center text-uppercase" style="font-family:serif; font-style:italic">Login</h1>
+
+
+<hr />
+<div class="row container-fluid bg-light align-items-center" style="font-family:serif; font-style:italic">
+    <div class="col-md-6">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group col-lg-6">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" placeholder="Email Address" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="Role" class="control-label"></label>
+                    <input asp-for="Role" class="form-control" />
+                    <span asp-validation-for="Role" class="text-danger"></span>
+                </div>*@
+            <div class="form-group col-lg-6">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" placeholder="Password"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+        <div>
+            <p>Create an Account?<a asp-controller="User" asp-action="Register">Register</a></p>
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <img class="img-fluid" src="~/asset/logo.png" alt="Alternate Text" />
+        <h5 class="text-uppercase">Login with us to book an event.</h5>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

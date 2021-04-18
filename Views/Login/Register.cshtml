@@ -1,0 +1,79 @@
+﻿@model EventPlanner.Models.UserAccount
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-center m-3 font-weight-bolder" style="font-family:serif; font-style:italic">Create your Account</h3>
+<div class="row container-fluid bg-light align-items-center" style="font-family:serif; font-style:italic">
+    <div class="col-md-6">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                    <label asp-for="User_id" class="control-label"></label>
+                    <input asp-for="User_id" class="form-control" />
+                    <span asp-validation-for="User_id" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <label asp-for="First_name" class="control-label"></label>
+                <input asp-for="First_name" class="form-control" />
+                <span asp-validation-for="First_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Last_name" class="control-label"></label>
+                <input asp-for="Last_name" class="form-control" />
+                <span asp-validation-for="Last_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phone" class="control-label"></label>
+                <input asp-for="phone" class="form-control" />
+                <span asp-validation-for="phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role" class="control-label"></label>
+                <input asp-for="Role" class="form-control" />
+                @*<select asp-for="Role" id="role" name="roletitle" class="form-control custom-select bg-white border-left-0 border-md">
+            <option value="">Choose your Role</option>
+            <option value="">User</option>
+            <option value="">Admin</option>
+        </select>*@
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create Account" class="btn btn-primary" />
+            </div>
+            <p>Already Have Account?<a asp-controller="Login" asp-action="Login">Sign Up</a></p>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <img class="img-fluid" src="https://images.unsplash.com/photo-1526894198609-10b3cdf45c52?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Y2hhbXBhZ25lfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Alternate Text" />
+        <h5 class="text-uppercase">Create an Account to Book an Event to Experience Exclusive Event Organized by us.</h5>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

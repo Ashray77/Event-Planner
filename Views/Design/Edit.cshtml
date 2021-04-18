@@ -1,0 +1,48 @@
+﻿@model EventPlanner.Models.Design
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1 class="text-center text-uppercase" style="font-family:serif; font-style:italic">Edit Design</h1>
+
+<hr />
+<div class="row container-fluid" style="font-family:serif; font-style:italic">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Design_id" class="control-label"></label>
+                <input asp-for="Design_id" class="form-control" />
+                <span asp-validation-for="Design_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Design_theme" class="control-label"></label>
+                <input asp-for="Design_theme" class="form-control" />
+                <span asp-validation-for="Design_theme" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Design_cost" class="control-label"></label>
+                <input asp-for="Design_cost" class="form-control" />
+                <span asp-validation-for="Design_cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Design_description" class="control-label"></label>
+                <input asp-for="Design_description" class="form-control" />
+                <span asp-validation-for="Design_description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ManageDesign">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

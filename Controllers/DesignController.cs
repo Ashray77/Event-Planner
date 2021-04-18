@@ -39,6 +39,61 @@ namespace EventPlanner.Controllers
             }
             return View(des);
         }
-        
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("ManageDesign");
+            }
+            var getdesigndetails = await _db.DesignTable.FindAsync(id);
+            return View(getdesigndetails);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Design design)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Update(design);
+                await _db.SaveChangesAsync();
+                return RedirectToAction("ManageDesign");
+            }
+            return View(design);
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("ManageDesign");
+            }
+            var getdesigndetails = await _db.DesignTable.FindAsync(id);
+            return View(getdesigndetails);
+
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("ManageDesign");
+            }
+            var getdesigndetails = await _db.DesignTable.FindAsync(id);
+            return View(getdesigndetails);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var getdesigndetails = await _db.DesignTable.FindAsync(id);
+            _db.DesignTable.Remove(getdesigndetails);
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction("ManageDesign");
+
+        }
     }
 }

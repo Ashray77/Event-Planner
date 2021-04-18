@@ -1,0 +1,43 @@
+﻿@model EventPlanner.Models.Design
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1 class="text-uppercase text-center" style="font-family:serif; font-style:italic">Design Details</h1>
+<hr />
+<div class="container-fluid" style="font-family:serif; font-style:italic">
+    <h4>Design</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Design_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Design_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Design_theme)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Design_theme)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Design_cost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Design_cost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Design_description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Design_description)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="ManageDesign">Back to List</a>
+</div>

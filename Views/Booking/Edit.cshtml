@@ -1,0 +1,76 @@
+﻿@model EventPlanner.Models.Booking
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Booking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+            <label asp-for="Booking_id" class="control-label"></label>
+            <input asp-for="Booking_id" class="form-control" />
+            <span asp-validation-for="Booking_id" class="text-danger"></span>
+        </div>*@
+            <div class="form-group">
+                <label asp-for="eventType" class="control-label"></label>
+                <select class="form-control" id="EventType_id" name="EventType_id" asp-for="eventType"
+                        asp-items="@(new SelectList(ViewBag.listofevent,"EventType_id","EventType"))"></select>
+
+                <span asp-validation-for="eventType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventShift" class="control-label"></label>
+                <input asp-for="EventShift" class="form-control" />
+                <span asp-validation-for="EventShift" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventDate" class="control-label"></label>
+                <input asp-for="EventDate" class="form-control" />
+                <span asp-validation-for="EventDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberofGuest" class="control-label"></label>
+                <input asp-for="NumberofGuest" class="form-control" />
+                <span asp-validation-for="NumberofGuest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <lable class="control-label">Venue Name</lable>
+                <select class="form-control" id="Venue_id" name="Venue_id" asp-for="Ven"
+                        asp-items="@(new SelectList(ViewBag.listofvenue,"Venue_id","Venue_name"))"></select>
+            </div>
+            <div class="form-group">
+                <lable class="control-label">Design Name</lable>
+                <select class="form-control" id="Design_id" name="Design_id" asp-for="Des"
+                        asp-items="@(new SelectList(ViewBag.listofdesign,"Design_id","Design_theme"))"></select>
+            </div>
+            <div class="form-group">
+                <lable class="control-label">Menu Name</lable>
+                <select class="form-control" id="Menu_id" name="Menu_id" asp-for="Men"
+                        asp-items="@(new SelectList(ViewBag.listofmenu,"Menu_id","Menu_name"))"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExtraDescription" class="control-label"></label>
+                <input asp-for="ExtraDescription" class="form-control" />
+                <span asp-validation-for="ExtraDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="BookingRecord">Back Booking Records</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

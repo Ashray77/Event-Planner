@@ -2,53 +2,58 @@
 
 @{
     ViewData["Title"] = "ManageDesign";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>ManageDesign</h1>
+<h1 class="text-center text-uppercase" style="font-family:serif; font-style:italic">List of Design</h1>
 
-<p>
-    <a asp-action="AddDesign">Add New Designs Theme</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Design_id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Design_theme)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Design_cost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Design_description)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Design_id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Design_theme)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Design_cost)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Design_description)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container-fluid bg-light" style="font-family:serif; font-style:italic"> 
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Design_id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Design_theme)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Design_cost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Design_description)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Design_id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Design_theme)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Design_cost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Design_description)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Design_id }, new { @Class = "btn btn-primary" }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Design_id }, new { @Class = "btn btn-success" }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Design_id }, new { @Class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<div class="btn-group">
+    <a class="btn btn-info" asp-action="AddDesign">Add New Designs Theme</a>
+</div>
